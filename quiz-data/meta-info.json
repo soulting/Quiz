@@ -1,0 +1,58 @@
+{
+  "quizes": [
+    {
+      "title": "IP-Quiz",
+      "description": "This quiz tests the knowledge of IPv4 and IPv6",
+      "icon": "ip.png",
+      "color": "rgb(255,180,26)"
+    },
+    {
+      "title": "OS-Quiz",
+      "description": "This quiz tests the knowledge of Operating Systems",
+      "icon": "os.png",
+      "color": "rgb(48,180,118)"
+    },
+    {
+      "title": "ISO/OSI-Quiz",
+      "description": "This quiz tests the knowledge of ISO/OSI layers",
+      "icon": "iso-osi.png",
+      "color": "rgb(123,104,238)"
+    },
+    {
+      "title": "TCP/IP-Quiz",
+      "description": "This quiz tests the knowledge of TCP/IP protocol",
+      "icon": "tcp-ip.png",
+      "color": "rgb(0,123,255)"
+    },
+    {
+      "title": "Threads-Quiz",
+      "description": "This quiz tests the knowledge of Threads",
+      "icon": "threads.png",
+      "color": "rgb(255,69,0)"
+    },
+    {
+      "title": "HTML-Quiz",
+      "description": "This quiz tests the knowledge of HTML",
+      "icon": "html.png",
+      "color": "rgb(255,99,71)"
+    },
+    {
+      "title": "CSS-Quiz",
+      "description": "This quiz tests the knowledge of CSS",
+      "icon": "css.png",
+      "color": "rgb(70,130,180)"
+    },
+    {
+      "title": "JavaScript-Quiz",
+      "description": "This quiz tests the knowledge of JavaScript",
+      "icon": "javascript.png",
+      "color": "rgb(255,215,0)"
+    },
+    {
+      "title": "JSON-Quiz",
+      "description": "This quiz tests the knowledge of JSON",
+      "icon": "json.png",
+      "color": "rgb(46,139,87)"
+    }
+  ]
+}
