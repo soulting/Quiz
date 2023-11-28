@@ -9,6 +9,18 @@ async function getQuizzes() {
   }
 }
 
+async function goToQuiz(id) {
+  try {
+    const response = await fetch(`..\\quiz-data\\${id}.json`);
+    const data = await response.json();
+
+    localStorage.setItem("questions", JSON.stringify(data.questions));
+    window.open(".\\quiz.html");
+  } catch (error) {
+    console.error("Błąd w ładowaniu plików", error);
+  }
+}
+
 const mainSection = document.querySelector(".main-section");
 
 getQuizzes()
@@ -23,6 +35,13 @@ getQuizzes()
         <button class="start-quiz">START QUIZ</button>
         </div>`;
       mainSection.innerHTML += newQuizContainer;
+    });
+    const startButtons = document.querySelectorAll(".start-quiz");
+
+    startButtons.forEach((element) => {
+      element.addEventListener("click", () => {
+        goToQuiz(element.parentElement.id);
+      });
     });
   })
   .catch((err) => console.error("Wystąpił błąd: ", err));
