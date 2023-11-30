@@ -73,6 +73,10 @@ body {
   background-color: rgb(105, 90, 224);
 }
 
+.anwser[data-picked="true"] {
+  background-color: rgb(43, 23, 223);
+}
+
 .next {
   height: 10vh;
   background-color: rgb(84, 74, 178);
