@@ -39,6 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   controlButton.addEventListener("click", () => {
+    if (questionNumber === 10) {
+      alert("odpowiedziałeś na wszystkie pytania, wybierz kolejny quiz");
+      window.open(".\\index.html");
+    }
     try {
       const anwser = document.querySelector(`[data-picked="true"]`);
       if (anwser.id === tenQuestions[questionNumber].answer) {
