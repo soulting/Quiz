@@ -90,3 +90,42 @@ body {
 .next:hover {
   background-color: rgb(50, 40, 125);
 }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.info-window {
+  box-sizing: border-box;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  min-height: 40%;
+  min-width: 40%;
+  max-height: 70%;
+  max-width: 70%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px;
+}
+
+.overlay-button {
+  border: none;
+  border-radius: 15px;
+  background-color: rgb(84, 74, 178);
+  height: 50px;
+  width: 70px;
+  color: white;
+}

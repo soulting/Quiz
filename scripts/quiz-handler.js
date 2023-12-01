@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-  function loadQuestion(question, anwsers, newQuestion) {
+  function loadQuestion(question, anwsers, anwserExplenation, newQuestion) {
     question.textContent = newQuestion.question;
     anwsers[0].textContent = newQuestion.A;
     anwsers[1].textContent = newQuestion.B;
     anwsers[2].textContent = newQuestion.C;
     anwsers[3].textContent = newQuestion.D;
+    anwserExplenation.textContent = newQuestion.explanation;
   }
 
   const questions = JSON.parse(localStorage.getItem("questions"));
@@ -13,6 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const answerButtons = document.querySelectorAll(".anwser");
   const controlButton = document.querySelector(".next");
   const pointsElemments = document.querySelectorAll(".point");
+  const overlayButton = document.querySelector(".overlay-button");
+  const overlay = document.querySelector(".overlay");
+  const overlayAnwser = document.querySelector(".right-anwser");
 
   let tenQuestions = [];
   let indexArr = [];
@@ -25,6 +29,22 @@ document.addEventListener("DOMContentLoaded", () => {
       tenQuestions.push(questions[newIndex]);
     }
   }
+
+  overlayButton.addEventListener("click", () => {
+    overlay.style.display = "none";
+
+    if (questionNumber === 10) {
+      alert("odpowiedziałeś na wszystkie pytania, wybierz kolejny quiz");
+      window.open(".\\index.html");
+    }
+
+    loadQuestion(
+      questionElement,
+      answerButtons,
+      overlayAnwser,
+      tenQuestions[questionNumber]
+    );
+  });
 
   answerButtons.forEach((element) => {
     element.addEventListener("click", () => {
@@ -39,10 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   controlButton.addEventListener("click", () => {
-    if (questionNumber === 10) {
-      alert("odpowiedziałeś na wszystkie pytania, wybierz kolejny quiz");
-      window.open(".\\index.html");
-    }
     try {
       const anwser = document.querySelector(`[data-picked="true"]`);
       if (anwser.id === tenQuestions[questionNumber].answer) {
@@ -56,15 +72,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       answerButtons.forEach((element) => (element.dataset.picked = "false"));
       questionNumber++;
-      loadQuestion(
-        questionElement,
-        answerButtons,
-        tenQuestions[questionNumber]
-      );
+      overlay.style.display = "block";
     } catch (error) {
-      alert("musisz wybrać jakąś odpowiedź");
+      console.error(error);
+      alert("musisz wybrać jakąś odpowiedź", error);
     }
   });
 
-  loadQuestion(questionElement, answerButtons, tenQuestions[questionNumber]);
+  loadQuestion(
+    questionElement,
+    answerButtons,
+    overlayAnwser,
+    tenQuestions[questionNumber]
+  );
 });
