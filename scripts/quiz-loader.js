@@ -3,9 +3,9 @@ async function getQuizzes() {
     const response = await fetch("..\\quiz-data\\meta-info.json");
     const data = await response.json();
 
-    return data.quizes;
+    return data.quizzes;
   } catch (error) {
-    console.error("Błąd w ładowaniu plików", error);
+    console.error("Error loading files", error);
   }
 }
 
@@ -17,7 +17,7 @@ async function goToQuiz(id) {
     localStorage.setItem("questions", JSON.stringify(data.questions));
     window.open(".\\quiz.html");
   } catch (error) {
-    console.error("Błąd w ładowaniu plików", error);
+    console.error("Error loading files", error);
   }
 }
 
@@ -44,4 +44,4 @@ getQuizzes()
       });
     });
   })
-  .catch((err) => console.error("Wystąpił błąd: ", err));
+  .catch((err) => console.error("An error occurred: ", err));

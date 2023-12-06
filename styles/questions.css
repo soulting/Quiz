@@ -5,7 +5,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(78, 66, 169);
+  background-color: white;
 }
 
 .main-section {
@@ -17,6 +17,7 @@ body {
   border-radius: 10px;
   background-color: white;
   justify-content: space-between;
+  border: 1px solid rgb(16, 194, 105);
 }
 
 .points {
@@ -34,7 +35,7 @@ body {
   justify-content: center;
   width: 10%;
   height: 110%;
-  background-color: rgb(25, 153, 255);
+  background-color: white;
   border: none;
   border-right: 1px solid black;
 }
@@ -61,34 +62,38 @@ body {
   width: 48%;
   height: 10vh;
   margin: 1%;
-  background-color: rgb(144, 135, 229);
-  border: none;
+  background-color: rgb(16, 194, 105);
+  border: solid 1px rgb(16, 194, 105);
   border-radius: 10px;
   color: white;
   font-size: larger;
   font-weight: 600;
+  transition: 0.5s;
 }
 
 .anwser:hover {
-  background-color: rgb(105, 90, 224);
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
 }
 
 .anwser[data-picked="true"] {
-  background-color: rgb(43, 23, 223);
+  color: rgb(16, 194, 105);
+  background-color: white;
 }
 
 .next {
   height: 10vh;
-  background-color: rgb(84, 74, 178);
-  border: none;
+  background-color: white;
+  border: solid rgb(16, 194, 105) 2px;
   border-radius: 10px;
-  color: white;
+  color: rgb(16, 194, 105);
   font-size: larger;
   font-weight: 900;
 }
 
 .next:hover {
-  background-color: rgb(50, 40, 125);
+  color: white;
+  background-color: rgb(16, 194, 105);
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
 }
 
 .overlay {
@@ -124,8 +129,12 @@ body {
 .overlay-button {
   border: none;
   border-radius: 15px;
-  background-color: rgb(84, 74, 178);
+  background-color: rgb(16, 194, 105);
   height: 50px;
   width: 70px;
   color: white;
+}
+
+.overlay-button:hover {
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
 }

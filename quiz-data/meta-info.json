@@ -62,6 +62,13 @@
       "description": "This quiz tests the knowledge of JSON",
       "icon": "json.png",
       "color": "rgb(46,139,87)"
+    },
+    {
+      "id": 10,
+      "title": "Sieci-w1",
+      "description": "Pytania do wykładu pierwszego wykładu z sieci",
+      "icon": "json.png",
+      "color": "rgb(46,139,87)"
     }
   ]
 }

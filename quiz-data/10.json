@@ -1,0 +1,553 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Jakie jest główne zadanie jądra systemu w systemie operacyjnym UNIX?",
+      "A": "Zarządzanie interfejsem graficznym",
+      "B": "Obsługa sytuacji wyjątkowych i przerwań sprzętowych",
+      "C": "Tworzenie kopii zapasowych danych",
+      "D": "Optymalizacja wydajności procesora",
+      "answer": "B",
+      "explanation": "Jądro systemu w UNIX ma za zadanie obsługiwać sytuacje wyjątkowe i przerwania sprzętowe."
+    },
+
+    {
+      "id": 2,
+      "question": "Jak użytkownik komunikuje się z jądrem systemu operacyjnego?",
+      "A": "Za pomocą interfejsu graficznego",
+      "B": "Poprzez sterowniki urządzeń",
+      "C": "Używając poleceń tekstowych",
+      "D": "Za pomocą funkcji systemowych",
+      "answer": "D",
+      "explanation": "Użytkownik komunikuje się z jądrem systemu operacyjnego za pomocą funkcji systemowych."
+    },
+
+    {
+      "id": 3,
+      "question": "Co to są 'pliki specjalne' w systemie UNIX?",
+      "A": "Pliki konfiguracyjne systemu",
+      "B": "Pliki używane do zarządzania urządzeniami",
+      "C": "Pliki zawierające dane użytkownika",
+      "D": "Pliki przechowujące historię systemu",
+      "answer": "B",
+      "explanation": "Pliki specjalne w systemie UNIX są używane do zarządzania urządzeniami."
+    },
+
+    {
+      "id": 4,
+      "question": "Co zawiera 'superblock' w systemie plików UNIX?",
+      "A": "Dane użytkownika",
+      "B": "Informacje o stanie sieci",
+      "C": "Metadane systemu plików",
+      "D": "Sterowniki urządzeń",
+      "answer": "C",
+      "explanation": "Superblock w systemie plików UNIX zawiera metadane systemu plików, takie jak rozmiar systemu plików i lista wolnych bloków/i-węzłów."
+    },
+
+    {
+      "id": 5,
+      "question": "Jakie informacje zawiera i-węzeł w systemie UNIX?",
+      "A": "Dane konfiguracyjne systemu",
+      "B": "Prawa dostępu i typ pliku",
+      "C": "Informacje o sieci",
+      "D": "Dane o stanie dysku twardego",
+      "answer": "B",
+      "explanation": "I-węzeł w systemie UNIX zawiera informacje o pliku, w tym jego typ i prawa dostępu."
+    },
+
+    {
+      "id": 6,
+      "question": "Co to jest proces w kontekście systemu operacyjnego UNIX?",
+      "A": "Aplikacja zainstalowana na komputerze",
+      "B": "Zestaw instrukcji do wykonania",
+      "C": "Program w trakcie wykonania",
+      "D": "Proces instalacji systemu",
+      "answer": "C",
+      "explanation": "W kontekście systemu operacyjnego UNIX, proces to program w trakcie jego wykonania."
+    },
+
+    {
+      "id": 7,
+      "question": "Jakie zadanie pełni funkcja 'fork' w systemie UNIX?",
+      "A": "Tworzenie nowego procesu",
+      "B": "Rezerwacja pamięci dla procesu",
+      "C": "Zamykanie aktywnych procesów",
+      "D": "Monitorowanie stanu procesora",
+      "answer": "A",
+      "explanation": "Funkcja 'fork' w systemie UNIX służy do tworzenia nowego procesu, będącego kopią procesu wywołującego."
+    },
+
+    {
+      "id": 8,
+      "question": "Jakie są role 'UID' i 'GID' w systemie UNIX?",
+      "A": "Zarządzanie siecią i bezpieczeństwem",
+      "B": "Monitorowanie wydajności systemu",
+      "C": "Uwierzytelnianie i określanie praw dostępu",
+      "D": "Zarządzanie pamięcią systemu",
+      "answer": "C",
+      "explanation": "'UID' (User ID) i 'GID' (Group ID) w systemie UNIX służą do uwierzytelniania i określają prawa dostępu do plików i procesów."
+    },
+
+    {
+      "id": 9,
+      "question": "Jak działa funkcja 'exec' w systemie UNIX?",
+      "A": "Tworzy kopię pliku",
+      "B": "Zastępuje przestrzeń adresową procesu",
+      "C": "Monitoruje stan procesu",
+      "D": "Zarządza uprawnieniami użytkownika",
+      "answer": "B",
+      "explanation": "Funkcja 'exec' w systemie UNIX zastępuje przestrzeń adresową obecnego procesu przestrzenią adresową nowego programu."
+    },
+
+    {
+      "id": 10,
+      "question": "Co to są procesy 'zombie' w systemie UNIX?",
+      "A": "Procesy oczekujące na uruchomienie",
+      "B": "Procesy, które zakończyły działanie, ale ich struktura proc nie została usunięta",
+      "C": "Procesy pracujące w tle",
+      "D": "Procesy zarządzające bezpieczeństwem systemu",
+      "answer": "B",
+      "explanation": "Procesy 'zombie' w systemie UNIX to procesy, które zakończyły swoje działanie, ale ich struktura proc wciąż istnieje w systemie."
+    },
+
+    {
+      "id": 11,
+      "question": "Jaka jest rola struktury 'proc' w systemie UNIX?",
+      "A": "Zarządzanie pamięcią",
+      "B": "Monitorowanie wydajności sieci",
+      "C": "Przechowywanie informacji o procesie",
+      "D": "Zarządzanie użytkownikami systemu",
+      "answer": "C",
+      "explanation": "Struktura 'proc' w systemie UNIX służy do przechowywania informacji o procesie, w tym jego stanie i atrybutach."
+    },
+
+    {
+      "id": 12,
+      "question": "Jakie informacje zawiera obszar 'boot' w systemie UNIX?",
+      "A": "Kod startowy systemu",
+      "B": "Dane użytkownika",
+      "C": "Konfiguracje sieciowe",
+      "D": "Sterowniki urządzeń",
+      "answer": "A",
+      "explanation": "Obszar 'boot' w systemie UNIX zawiera kod startowy systemu, niezbędny do jego uruchomienia."
+    },
+
+    {
+      "id": 13,
+      "question": "Co to są 'potoki nazwane' i 'gniazda' w systemie UNIX?",
+      "A": "Metody szyfrowania danych",
+      "B": "Narzędzia do zarządzania dyskiem",
+      "C": "Abstrakcje komunikacyjne między procesami",
+      "D": "Interfejsy do zarządzania bazami danych",
+      "answer": "C",
+      "explanation": "'Potoki nazwane' i 'gniazda' są abstrakcjami komunikacyjnymi w systemie UNIX, służącymi do wymiany danych między procesami."
+    },
+
+    {
+      "id": 14,
+      "question": "Do czego służą 'urządzenia blokowe' i 'urządzenia znakowe' w systemie UNIX?",
+      "A": "Do przechowywania i zarządzania danymi",
+      "B": "Jako interfejsy do komunikacji z urządzeniami zewnętrznymi",
+      "C": "Do monitorowania stanu systemu",
+      "D": "Jako narzędzia do backupu danych",
+      "answer": "B",
+      "explanation": "'Urządzenia blokowe' i 'urządzenia znakowe' w systemie UNIX służą jako interfejsy do komunikacji z urządzeniami zewnętrznymi, takimi jak dyski twarde i klawiatury."
+    },
+
+    {
+      "id": 15,
+      "question": "Co to jest 'fork' w kontekście systemu UNIX?",
+      "A": "Funkcja tworzenia kopii procesu",
+      "B": "Mechanizm zarządzania pamięcią",
+      "C": "Narzędzie do monitorowania systemu",
+      "D": "Metoda aktualizacji systemu",
+      "answer": "A",
+      "explanation": "'Fork' w systemie UNIX to funkcja służąca do tworzenia nowego procesu, który jest kopią procesu wywołującego."
+    },
+
+    {
+      "id": 16,
+      "question": "Jak działają funkcje 'exec' w systemie UNIX?",
+      "A": "Zarządzają pamięcią",
+      "B": "Monitorują stan systemu",
+      "C": "Zastępują przestrzeń adresową procesu nowym programem",
+      "D": "Tworzą kopie zapasowe systemu",
+      "answer": "C",
+      "explanation": "Funkcje 'exec' w systemie UNIX zastępują przestrzeń adresową procesu wywołującego przestrzenią adresową nowego programu."
+    },
+
+    {
+      "id": 17,
+      "question": "Jakie są stany, w których może znajdować się proces w systemie UNIX?",
+      "A": "Aktywny, uśpiony, zakończony",
+      "B": "Gotowy, wykonywany, zatrzymany",
+      "C": "Uruchomiony, wstrzymany, usunięty",
+      "D": "Zainicjowany, w trakcie działania, zakończony",
+      "answer": "B",
+      "explanation": "Proces w systemie UNIX może znajdować się w różnych stanach, w tym 'gotowy do wykonania', 'wykonywany' i 'zatrzymany'."
+    },
+
+    {
+      "id": 18,
+      "question": "W jakim celu używa się funkcji 'wait' i 'waitpid' w systemie UNIX?",
+      "A": "Do zarządzania pamięcią",
+      "B": "Do monitorowania stanu procesora",
+      "C": "Do synchronizacji zakończenia procesu potomnego z procesem rodzicem",
+      "D": "Do zarządzania uprawnieniami użytkowników",
+      "answer": "C",
+      "explanation": "Funkcje 'wait' i 'waitpid' w systemie UNIX są używane do synchronizacji zakończenia procesu potomnego z procesem rodzicem."
+    },
+
+    {
+      "id": 19,
+      "question": "Co to są procesy 'zombie' w systemie UNIX?",
+      "A": "Procesy uruchomione, ale nieaktywne",
+      "B": "Procesy, które zakończyły działanie, ale nie zostały jeszcze usunięte",
+      "C": "Procesy w trakcie restartowania",
+      "D": "Procesy związane z bezpieczeństwem systemu",
+      "answer": "B",
+      "explanation": "Procesy 'zombie' w systemie UNIX to procesy, które zakończyły swoje działanie, ale ich struktura 'proc' jeszcze istnieje w systemie."
+    },
+
+    {
+      "id": 20,
+      "question": "Jakie informacje zawiera struktura 'proc' w systemie UNIX?",
+      "A": "Dane o konfiguracji sieci",
+      "B": "Informacje o stanie procesu i jego atrybutach",
+      "C": "Dane o użytkownikach systemu",
+      "D": "Historię komend użytkownika",
+      "answer": "B",
+      "explanation": "Struktura 'proc' w systemie UNIX zawiera informacje o stanie procesu i jego atrybutach, w tym identyfikatorze procesu, stanu procesu i użytkowniku."
+    },
+
+    {
+      "id": 21,
+      "question": "Co to jest 'superblock' w systemie UNIX?",
+      "A": "Obszar przechowywania danych użytkownika",
+      "B": "Obszar pamięci RAM",
+      "C": "Struktura przechowująca metadane systemu plików",
+      "D": "Część kodu źródłowego systemu operacyjnego",
+      "answer": "C",
+      "explanation": "'Superblock' w systemie UNIX to struktura zawierająca metadane systemu plików, takie jak rozmiar systemu plików i informacje o wolnych blokach i i-węzłach."
+    },
+
+    {
+      "id": 22,
+      "question": "Co reprezentuje i-węzeł w systemie plików UNIX?",
+      "A": "Interfejs sieciowy",
+      "B": "Strukturę z informacjami o pliku",
+      "C": "Partycję na dysku twardym",
+      "D": "Proces w systemie",
+      "answer": "B",
+      "explanation": "I-węzeł w systemie plików UNIX to struktura zawierająca informacje o pliku, takie jak prawa dostępu, typ pliku i lokalizacja danych."
+    },
+
+    {
+      "id": 23,
+      "question": "Jakie zadanie pełnią funkcje systemowe w systemie UNIX?",
+      "A": "Konfiguracja sprzętu",
+      "B": "Komunikacja z jądrem systemu",
+      "C": "Zarządzanie interfejsem użytkownika",
+      "D": "Aktualizacja systemu operacyjnego",
+      "answer": "B",
+      "explanation": "Funkcje systemowe w systemie UNIX umożliwiają komunikację między użytkownikiem a jądrem systemu, ułatwiając wykonanie różnych zadań systemowych."
+    },
+
+    {
+      "id": 24,
+      "question": "Do czego służą potoki nazwane i gniazda w systemie UNIX?",
+      "A": "Do zarządzania pamięcią",
+      "B": "Do przesyłania danych między procesami",
+      "C": "Do monitorowania wydajności systemu",
+      "D": "Do zarządzania dyskami twardymi",
+      "answer": "B",
+      "explanation": "Potoki nazwane i gniazda w systemie UNIX są wykorzystywane do przesyłania danych między różnymi procesami."
+    },
+
+    {
+      "id": 25,
+      "question": "Jaka jest funkcja urządzeń blokowych i urządzeń znakowych w systemie UNIX?",
+      "A": "Przechowywanie danych użytkownika",
+      "B": "Zarządzanie pamięcią systemową",
+      "C": "Komunikacja z urządzeniami zewnętrznymi",
+      "D": "Obsługa procesów systemowych",
+      "answer": "C",
+      "explanation": "Urządzenia blokowe i urządzenia znakowe w systemie UNIX służą do komunikacji z urządzeniami zewnętrznymi, takimi jak dyski twarde i klawiatury."
+    },
+
+    {
+      "id": 26,
+      "question": "Jakie są stany procesu w systemie UNIX?",
+      "A": "Uruchomiony, wstrzymany, zakończony",
+      "B": "Aktywny, uśpiony, nieaktywny",
+      "C": "Gotowy, wykonywany, zatrzymany",
+      "D": "Startowy, środkowy, końcowy",
+      "answer": "C",
+      "explanation": "Proces w systemie UNIX może znajdować się w stanach takich jak gotowy do wykonania, wykonywany i zatrzymany."
+    },
+
+    {
+      "id": 27,
+      "question": "Co to jest proces 'zombie' w kontekście systemu UNIX?",
+      "A": "Nieaktywny proces w tle",
+      "B": "Proces, który zakończył działanie, ale wciąż jest obecny w systemie",
+      "C": "Proces oczekujący na uruchomienie",
+      "D": "Proces zarządzający bezpieczeństwem",
+      "answer": "B",
+      "explanation": "Proces 'zombie' w systemie UNIX to proces, który zakończył swoje działanie, ale jego struktura proc nie została jeszcze usunięta z systemu."
+    },
+
+    {
+      "id": 28,
+      "question": "Co to jest 'fork' w systemie UNIX?",
+      "A": "Mechanizm zarządzania pamięcią",
+      "B": "Funkcja tworzenia nowego procesu",
+      "C": "Narzędzie do monitorowania systemu",
+      "D": "Metoda aktualizacji systemu",
+      "answer": "B",
+      "explanation": "'Fork' w systemie UNIX to funkcja służąca do tworzenia nowego procesu, który jest kopią procesu wywołującego."
+    },
+
+    {
+      "id": 29,
+      "question": "Jak działają funkcje 'exec' w systemie UNIX?",
+      "A": "Zarządzają pamięcią",
+      "B": "Monitorują stan systemu",
+      "C": "Zastępują przestrzeń adresową procesu nowym programem",
+      "D": "Tworzą kopie zapasowe systemu",
+      "answer": "C",
+      "explanation": "Funkcje 'exec' w systemie UNIX zastępują przestrzeń adresową procesu wywołującego przestrzenią adresową nowego programu."
+    },
+
+    {
+      "id": 30,
+      "question": "Jak działa funkcja 'wait' w systemie UNIX?",
+      "A": "Zarządza pamięcią",
+      "B": "Monitoruje stan procesora",
+      "C": "Blokuję proces macierzysty do czasu zakończenia procesu potomnego",
+      "D": "Zarządza uprawnieniami użytkowników",
+      "answer": "C",
+      "explanation": "Funkcja 'wait' w systemie UNIX blokuje proces macierzysty do czasu zakończenia działania procesu potomnego."
+    },
+
+    {
+      "id": 31,
+      "question": "Co to jest 'superblock' w systemie plików UNIX?",
+      "A": "Obszar kodu jądra",
+      "B": "Struktura przechowująca metadane systemu plików",
+      "C": "Obszar przechowywania danych użytkownika",
+      "D": "Interfejs zarządzania urządzeniami",
+      "answer": "B",
+      "explanation": "'Superblock' to struktura w systemie plików UNIX przechowująca metadane systemu plików, jak rozmiar systemu plików i listę wolnych bloków/i-węzłów."
+    },
+
+    {
+      "id": 32,
+      "question": "Jakie informacje zawiera i-węzeł w systemie UNIX?",
+      "A": "Informacje o konfiguracji sieci",
+      "B": "Dane o użytkownikach systemu",
+      "C": "Informacje o pliku, w tym prawa dostępu i lokalizacja danych",
+      "D": "Statystyki użycia systemu",
+      "answer": "C",
+      "explanation": "I-węzeł w systemie UNIX zawiera informacje o pliku, takie jak prawa dostępu, typ pliku i lokalizacja danych."
+    },
+
+    {
+      "id": 33,
+      "question": "W jaki sposób jądro systemu UNIX komunikuje się ze sprzętem?",
+      "A": "Za pomocą interfejsu użytkownika",
+      "B": "Poprzez aplikacje",
+      "C": "Za pomocą sterowników urządzeń",
+      "D": "Przez sieć",
+      "answer": "C",
+      "explanation": "Jądro systemu UNIX komunikuje się ze sprzętem za pomocą sterowników urządzeń."
+    },
+
+    {
+      "id": 34,
+      "question": "Co to są potoki nazwane i gniazda w systemie UNIX?",
+      "A": "Metody szyfrowania danych",
+      "B": "Abstrakcje komunikacyjne między procesami",
+      "C": "Narzędzia do zarządzania dyskiem",
+      "D": "Interfejsy do zarządzania bazami danych",
+      "answer": "B",
+      "explanation": "Potoki nazwane i gniazda są abstrakcjami komunikacyjnymi w systemie UNIX, używanymi do wymiany danych między procesami."
+    },
+
+    {
+      "id": 35,
+      "question": "Jakie są rodzaje urządzeń w systemie UNIX?",
+      "A": "Urządzenia blokowe i urządzenia znakowe",
+      "B": "Dyski twarde i napędy optyczne",
+      "C": "Klawiatury i monitory",
+      "D": "Routery i przełączniki",
+      "answer": "A",
+      "explanation": "W systemie UNIX wyróżnia się urządzenia blokowe i urządzenia znakowe, służące do komunikacji z urządzeniami zewnętrznymi."
+    },
+
+    {
+      "id": 36,
+      "question": "Jak działa funkcja 'fork' w systemie UNIX?",
+      "A": "Tworzy kopię pliku",
+      "B": "Tworzy nowy proces",
+      "C": "Zarządza pamięcią",
+      "D": "Monitoruje stan systemu",
+      "answer": "B",
+      "explanation": "Funkcja 'fork' w systemie UNIX tworzy nowy proces, będący kopią procesu wywołującego."
+    },
+
+    {
+      "id": 37,
+      "question": "Jakie stany może przyjmować proces w systemie UNIX?",
+      "A": "Uruchomiony, wstrzymany, zakończony",
+      "B": "Gotowy, wykonywany, zatrzymany",
+      "C": "Aktywny, uśpiony, nieaktywny",
+      "D": "Startowy, środkowy, końcowy",
+      "answer": "B",
+      "explanation": "Proces w systemie UNIX może przyjmować stany takie jak gotowy do wykonania, wykonywany i zatrzymany."
+    },
+
+    {
+      "id": 38,
+      "question": "W jakim celu używa się funkcji 'wait' i 'waitpid' w systemie UNIX?",
+      "A": "Do zarządzania pamięcią",
+      "B": "Do synchronizacji zakończenia procesu potomnego z procesem rodzicem",
+      "C": "Do monitorowania stanu procesora",
+      "D": "Do zarządzania uprawnieniami użytkowników",
+      "answer": "B",
+      "explanation": "Funkcje 'wait' i 'waitpid' są używane do synchronizacji zakończenia działania procesu potomnego z procesem rodzicem."
+    },
+
+    {
+      "id": 39,
+      "question": "Co to są procesy 'zombie' w systemie UNIX?",
+      "A": "Procesy oczekujące na uruchomienie",
+      "B": "Procesy, które zakończyły działanie, ale nie zostały jeszcze usunięte",
+      "C": "Procesy w trakcie restartowania",
+      "D": "Procesy zarządzające bezpieczeństwem systemu",
+      "answer": "B",
+      "explanation": "Procesy 'zombie' w systemie UNIX to procesy, które zakończyły swoje działanie, ale ich struktura proc nie została jeszcze usunięta."
+    },
+
+    {
+      "id": 40,
+      "question": "Jak działa funkcja 'exec' w systemie UNIX?",
+      "A": "Tworzy kopię pliku",
+      "B": "Zarządza pamięcią",
+      "C": "Zastępuje przestrzeń adresową procesu nowym programem",
+      "D": "Monitoruje stan systemu",
+      "answer": "C",
+      "explanation": "Funkcja 'exec' w systemie UNIX zastępuje przestrzeń adresową procesu wywołującego przestrzenią adresową nowego programu."
+    },
+
+    {
+      "id": 41,
+      "question": "Jakie są główne funkcje jądra systemu operacyjnego UNIX?",
+      "A": "Zarządzanie interfejsem graficznym i aplikacjami",
+      "B": "Zarządzanie sprzętem i obsługa sytuacji wyjątkowych",
+      "C": "Zarządzanie użytkownikami i uprawnieniami",
+      "D": "Tworzenie kopii zapasowych i przywracanie danych",
+      "answer": "B",
+      "explanation": "Jądro systemu operacyjnego UNIX zarządza sprzętem komputerowym i obsługuje sytuacje wyjątkowe."
+    },
+
+    {
+      "id": 42,
+      "question": "Co to są 'pliki specjalne' w kontekście systemu UNIX?",
+      "A": "Pliki z ważnymi danymi systemowymi",
+      "B": "Pliki służące do komunikacji z urządzeniami zewnętrznymi",
+      "C": "Pliki używane do przechowywania danych użytkowników",
+      "D": "Pliki zabezpieczające przed wirusami",
+      "answer": "B",
+      "explanation": "W systemie UNIX, 'pliki specjalne' służą do komunikacji z urządzeniami zewnętrznymi."
+    },
+
+    {
+      "id": 43,
+      "question": "Jakie informacje znajdują się w 'superblock' systemu plików UNIX?",
+      "A": "Dane użytkownika i ustawienia systemowe",
+      "B": "Konfiguracje sprzętowe i oprogramowanie",
+      "C": "Metadane systemu plików, w tym rozmiar systemu",
+      "D": "Instrukcje uruchamiania systemu operacyjnego",
+      "answer": "C",
+      "explanation": "'Superblock' w systemie plików UNIX zawiera metadane systemu plików, w tym jego rozmiar."
+    },
+
+    {
+      "id": 44,
+      "question": "Co oznacza 'i-węzeł' w systemie plików UNIX?",
+      "A": "Interfejs sieciowy systemu",
+      "B": "Identyfikator procesu",
+      "C": "Strukturę z informacjami o pliku",
+      "D": "Wskaźnik na blok danych",
+      "answer": "C",
+      "explanation": "I-węzeł w systemie plików UNIX to struktura zawierająca informacje o pliku, takie jak prawa dostępu i lokalizacja danych."
+    },
+
+    {
+      "id": 45,
+      "question": "Co to jest proces w kontekście systemu UNIX?",
+      "A": "Zadanie zaplanowane przez użytkownika",
+      "B": "Program w trakcie wykonania",
+      "C": "Zestaw instrukcji systemu operacyjnego",
+      "D": "Usługa działająca w tle systemu",
+      "answer": "B",
+      "explanation": "W kontekście systemu UNIX, proces to program w trakcie jego wykonania, razem z przypisanymi zasobami."
+    },
+
+    {
+      "id": 46,
+      "question": "Jakie są główne stany procesu w systemie UNIX?",
+      "A": "Uruchomiony, zatrzymany, zakończony",
+      "B": "Aktywny, uśpiony, nieaktywny",
+      "C": "Gotowy, wykonywany, zatrzymany",
+      "D": "Inicjalizacja, działanie, zakończenie",
+      "answer": "C",
+      "explanation": "Proces w systemie UNIX może znajdować się w stanach takich jak gotowy do wykonania, wykonywany i zatrzymany."
+    },
+
+    {
+      "id": 47,
+      "question": "Co to jest 'fork' w systemie UNIX?",
+      "A": "Mechanizm zarządzania pamięcią",
+      "B": "Funkcja tworzenia kopii procesu",
+      "C": "Narzędzie do monitorowania systemu",
+      "D": "Metoda aktualizacji systemu",
+      "answer": "B",
+      "explanation": "'Fork' w systemie UNIX to funkcja służąca do tworzenia nowego procesu, będącego kopią procesu wywołującego."
+    },
+
+    {
+      "id": 48,
+      "question": "Co to są procesy 'zombie' w systemie UNIX?",
+      "A": "Procesy oczekujące na uruchomienie",
+      "B": "Procesy, które zakończyły działanie, ale ich struktura proc nie została usunięta",
+      "C": "Procesy w trakcie restartowania",
+      "D": "Procesy zarządzające bezpieczeństwem systemu",
+      "answer": "B",
+      "explanation": "Procesy 'zombie' w systemie UNIX to procesy, które zakończyły swoje działanie, ale ich struktura proc wciąż istnieje w systemie."
+    },
+
+    {
+      "id": 49,
+      "question": "Jakie są funkcje 'exec' w systemie UNIX?",
+      "A": "Zarządzanie pamięcią",
+      "B": "Monitorowanie stanu systemu",
+      "C": "Zastępowanie przestrzeni adresowej procesu nowym programem",
+      "D": "Tworzenie kopii zapasowych systemu",
+      "answer": "C",
+      "explanation": "Funkcje 'exec' w systemie UNIX zastępują przestrzeń adresową procesu wywołującego przestrzenią adresową nowego programu."
+    },
+
+    {
+      "id": 50,
+      "question": "Jak działają funkcje 'wait' i 'waitpid' w systemie UNIX?",
+      "A": "Do zarządzania pamięcią",
+      "B": "Do synchronizacji zakończenia procesu potomnego z procesem rodzicem",
+      "C": "Do monitorowania stanu procesora",
+      "D": "Do zarządzania uprawnieniami użytkowników",
+      "answer": "B",
+      "explanation": "Funkcje 'wait' i 'waitpid' w systemie UNIX są używane do synchronizacji zakończenia działania procesu potomnego z procesem rodzicem."
+    }
+  ]
+}
