@@ -21,12 +21,12 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  justify-content: space-between;
 }
 
 #username,
-#password {
-  margin-top: 10px;
-  margin-bottom: 50px;
+#password,
+#confirm-password {
   height: 30px;
   border: solid 1px rgb(16, 194, 105);
   border-radius: 15px;
@@ -41,4 +41,13 @@ body {
   border-radius: 25px;
   border: none;
   margin: 5px;
+}
+
+.username-container,
+.password-container,
+.button-container,
+.confirm-password-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

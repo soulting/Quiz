@@ -1,10 +1,49 @@
 body {
   margin: 0px;
+  margin-top: 10vh;
   padding: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  border: 1px solid rgb(16, 194, 105);
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 0px 60px -20px black;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  background-color: white;
+}
+
+.my-quizzes-button,
+.add-quiz-button,
+.logout-button {
+  width: 10vw;
+  height: 5vh;
+  color: rgb(16, 194, 105);
+  background-color: white;
+  border-radius: 25px;
+  border: 1px solid rgb(16, 194, 105);
+  margin: 5px;
+}
+
+.logout-button {
+  color: white;
+  background-color: rgb(230, 23, 20);
+  border: none;
+}
+
+.main-img {
+  max-height: 90%;
 }
 
 .main-section {
