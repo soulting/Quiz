@@ -10,7 +10,7 @@ body {
 
 .navbar {
   position: fixed;
-  border: 1px solid rgb(16, 194, 105);
+  border-bottom: 1px solid rgb(16, 194, 105);
   top: 0px;
   left: 0px;
   right: 0px;
@@ -34,6 +34,11 @@ body {
   border-radius: 25px;
   border: 1px solid rgb(16, 194, 105);
   margin: 5px;
+}
+
+.my-quizzes-button {
+  color: white;
+  background-color: rgb(16, 194, 105);
 }
 
 .logout-button {

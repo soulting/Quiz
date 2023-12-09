@@ -45,6 +45,16 @@ document.addEventListener("DOMContentLoaded", () => {
     searchQuizzesButton.style.color = "white";
     myQuizzesButton.style.backgroundColor = "white";
     myQuizzesButton.style.color = "rgb(16, 194, 105)";
+
+    const mainSection = document.querySelector(".main-section");
+    mainSection.innerHTML = "";
+
+    const newSection = `<div class="search-container">
+    <input class="search-input" type="text" /><button class="search-button">
+      <img class="search-icon" src="imgs/search.svg" alt="search icon" />
+    </button>
+  </div>`;
+    mainSection.innerHTML += newSection;
   });
 
   myQuizzesButton.addEventListener("click", () => {
