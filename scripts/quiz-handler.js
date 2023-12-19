@@ -1,22 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
   function loadQuestion(question, answers, answerExplanation, newQuestion) {
     question.textContent = newQuestion.question;
-    answers[0].textContent = newQuestion.A;
-    answers[1].textContent = newQuestion.B;
-    answers[2].textContent = newQuestion.C;
-    answers[3].textContent = newQuestion.D;
+    answers[0].textContent = newQuestion.option_A;
+    answers[1].textContent = newQuestion.option_B;
+    answers[2].textContent = newQuestion.option_C;
+    answers[3].textContent = newQuestion.option_D;
     answerExplanation.textContent = newQuestion.explanation;
   }
 
   const questions = JSON.parse(localStorage.getItem("questions"));
 
   const questionElement = document.querySelector(".question");
-  const answerButtons = document.querySelectorAll(".answer");
+  const answerButtons = document.querySelectorAll(".anwser");
   const controlButton = document.querySelector(".next");
   const pointsElements = document.querySelectorAll(".point");
   const overlayButton = document.querySelector(".overlay-button");
   const overlay = document.querySelector(".overlay");
-  const overlayAnswer = document.querySelector(".right-answer");
+  const overlayAnswer = document.querySelector(".right-anwser");
+  overlay.style.display = "none";
 
   let tenQuestions = [];
   let indexArr = [];
@@ -30,12 +31,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      console.log();
+      if (overlay.style.display !== "none") {
+        overlayButton.click();
+      } else {
+        controlButton.click();
+      }
+      answerButtons.forEach((element) => {
+        element.blur();
+      });
+    }
+  });
+
   overlayButton.addEventListener("click", () => {
     overlay.style.display = "none";
 
     if (questionNumber === 10) {
       alert("You have answered all the questions. Choose another quiz.");
-      window.open(".\\index.html");
+      window.open(".\\main.html", "_self");
     }
 
     loadQuestion(

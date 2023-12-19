@@ -22,6 +22,7 @@ body {
   padding-left: 1vw;
   padding-right: 1vw;
   background-color: white;
+  z-index: 100;
 }
 
 .my-quizzes-button,
@@ -110,6 +111,14 @@ body {
   width: 100%;
 }
 
+@media (max-width: 850px) {
+  .my-quizzes-button,
+  .add-quiz-button,
+  .logout-button {
+    width: 15vw;
+  }
+}
+
 @media (max-width: 700px) {
   .quiz-container {
     width: calc(33% - 2vh);
@@ -120,10 +129,23 @@ body {
   .quiz-container {
     width: calc(50% - 2vh);
   }
+
+  .my-quizzes-button,
+  .add-quiz-button,
+  .logout-button {
+    width: 20vw;
+  }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .quiz-container {
     width: calc(100% - 2vh);
+  }
+
+  .my-quizzes-button,
+  .add-quiz-button,
+  .logout-button {
+    width: 23vw;
+    margin: 1px;
   }
 }

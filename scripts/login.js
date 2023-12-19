@@ -23,6 +23,7 @@ const username = document.querySelector("#username");
 const password = document.querySelector("#password");
 const loginButton = document.querySelector(".login-button");
 const signInButton = document.querySelector(".sign-in-button");
+username.focus();
 
 loginButton.addEventListener("click", (event) => {
   event.preventDefault();
@@ -36,4 +37,26 @@ loginButton.addEventListener("click", (event) => {
 
 signInButton.addEventListener("click", () => {
   window.open(".\\sign-in.html", "_self");
+});
+
+username.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    if (username.value === "") {
+      alert("wprowadź nazwę użytkownika");
+    } else {
+      password.focus();
+    }
+  }
+});
+
+password.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    if (password.value === "") {
+      alert("wprowadź hasło");
+    } else {
+      loginButton.click();
+    }
+  }
 });
