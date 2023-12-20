@@ -115,10 +115,11 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (error) {}
   }
 
-  async function addQuiz(user, quizId) {
+  async function addQuiz(user, quizId, keyInput) {
     const data = {
       userId: user.id,
       quizId: quizId,
+      keyInput: keyInput,
     };
     try {
       const response = await fetch("http://127.0.0.1:5000/addQuiz", {
@@ -128,9 +129,14 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       if (response.ok) {
         const responseData = await response.json();
-        user.quiz_ids = responseData.new_quiz_list;
-        updateLocalStorageUser(user);
-        searchQuizzes(user.quiz_ids);
+
+        if (responseData.accepted) {
+          user.quiz_ids = responseData.new_quiz_list;
+          updateLocalStorageUser(user);
+          searchQuizzes(user.quiz_ids);
+        } else {
+          alert("Podałeś zły klucz");
+        }
       }
     } catch (error) {
       console.error("An error occurred", error);
@@ -172,7 +178,12 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(target.parentElement.id);
       startQuiz(target.parentElement.id);
     } else if (target.classList.contains("add-new-quiz")) {
-      addQuiz(user, target.closest(".new_quiz_container").id);
+      const keyInput = document.querySelector(".key-input").value;
+      if (keyInput === "") {
+        alert("Wpisz klucz!!!");
+      } else {
+        addQuiz(user, target.closest(".new_quiz_container").id, keyInput);
+      }
     } else if (target.classList.contains("delete-quiz")) {
       deleteQuiz(user, target.closest(".new_quiz_container").id);
     }
