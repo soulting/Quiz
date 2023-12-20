@@ -80,7 +80,8 @@
   padding-left: 10px;
 }
 
-.add-new-quiz {
+.add-new-quiz,
+.delete-quiz {
   width: 10vw;
   height: 5vh;
   color: white;
@@ -88,6 +89,12 @@
   border-radius: 25px;
   border: 1px solid rgb(16, 194, 105);
   margin: 5px;
+  transition: 0.5s;
+}
+
+.delete-quiz {
+  background-color: rgb(230, 23, 20);
+  border: 1px solid rgb(230, 23, 20);
 }
 
 .new-quiz-controls {

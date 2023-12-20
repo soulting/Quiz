@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
-      console.log();
       if (overlay.style.display !== "none") {
         overlayButton.click();
       } else {

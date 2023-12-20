@@ -1,7 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-  async function searchQuizzes(frase) {
+  function updateLocalStorageUser(updatedUser) {
+    localStorage.setItem("user", JSON.stringify(updatedUser));
+  }
+
+  async function searchQuizzes(userQuizes) {
+    const quote = document.querySelector(".search-input").value;
+
     data = {
-      frase: frase,
+      frase: quote,
     };
     try {
       const response = await fetch("http://127.0.0.1:5000/searchQuizzes", {
@@ -11,18 +17,29 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       if (response.ok) {
         const responseData = await response.json();
-        renderSearchHeaders(responseData.quizzes);
+        renderSearchHeaders(responseData.quizzes, userQuizes);
       }
     } catch (error) {
       console.error("An error occurred searching the quizzes", error);
     }
   }
 
-  async function renderSearchHeaders(responseData) {
+  async function renderSearchHeaders(responseData, userQuizes) {
     const newQuizControls = document.querySelector(".add-quiz-container");
     newQuizControls.innerHTML = "";
     responseData.forEach((element) => {
-      const newSearchHeader = `<div class="new_quiz_container">
+      const newHeaderControls = `<input class="key-input" type="password" placeholder="enter key" />
+      <button class="add-new-quiz">ADD</button>`;
+      const addedHeaderControls = `<button class="delete-quiz">DELETE</button>`;
+      let controlElements = ``;
+
+      if (userQuizes.includes(element.id)) {
+        controlElements = addedHeaderControls;
+      } else {
+        controlElements = newHeaderControls;
+      }
+
+      const newSearchHeader = `<div id=${element.id} class="new_quiz_container">
       <img
         class="search-quiz-icon"
         src="imgs/${element.icon}"
@@ -35,8 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </p>
       </div>
       <div class="new-quiz-controls">
-        <input class="key-input" type="password" placeholder="enter key" />
-        <button class="add-new-quiz">ADD</button>
+        ${controlElements}
       </div>
     </div>`;
 
@@ -99,6 +115,49 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (error) {}
   }
 
+  async function addQuiz(user, quizId) {
+    const data = {
+      userId: user.id,
+      quizId: quizId,
+    };
+    try {
+      const response = await fetch("http://127.0.0.1:5000/addQuiz", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (response.ok) {
+        const responseData = await response.json();
+        user.quiz_ids = responseData.new_quiz_list;
+        updateLocalStorageUser(user);
+        searchQuizzes(user.quiz_ids);
+      }
+    } catch (error) {
+      console.error("An error occurred", error);
+    }
+  }
+
+  async function deleteQuiz(user, quizId) {
+    data = {
+      userId: user.id,
+      quizId: quizId,
+    };
+
+    try {
+      const response = await fetch("http://127.0.0.1:5000/deleteQuiz", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (response.ok) {
+        const responseData = await response.json();
+        user.quiz_ids = responseData.new_quiz_list;
+        updateLocalStorageUser(user);
+        searchQuizzes(user.quiz_ids);
+      }
+    } catch (error) {}
+  }
+
   const myQuizzesButton = document.querySelector(".my-quizzes-button");
   const searchQuizzesButton = document.querySelector(".add-quiz-button");
   const logOutButton = document.querySelector(".logout-button");
@@ -110,7 +169,12 @@ document.addEventListener("DOMContentLoaded", () => {
   mainSection.addEventListener("click", (event) => {
     const target = event.target;
     if (target.classList.contains("start-quiz")) {
+      console.log(target.parentElement.id);
       startQuiz(target.parentElement.id);
+    } else if (target.classList.contains("add-new-quiz")) {
+      addQuiz(user, target.closest(".new_quiz_container").id);
+    } else if (target.classList.contains("delete-quiz")) {
+      deleteQuiz(user, target.closest(".new_quiz_container").id);
     }
   });
 
@@ -134,8 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const searchButton = document.querySelector(".search-button");
     searchButton.addEventListener("click", () => {
-      const quote = document.querySelector(".search-input");
-      searchQuizzes(quote.value);
+      searchQuizzes(user.quiz_ids);
     });
   });
 
