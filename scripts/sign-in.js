@@ -1,18 +1,9 @@
+import { fetchData } from "./api.js";
+
 async function createUser(data) {
   try {
-    const response = await fetch("http://127.0.0.1:5000/sign-in", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-    if (response.ok) {
-      const responseData = await response.json();
-      window.open(".\\login.html", "_self");
-    } else {
-      console.error(
-        `Server responded with an error ${response.status}: ${response.statusText}`
-      );
-    }
+    await fetchData("sign-in", "POST", data);
+    window.open(".\\login.html", "_self");
   } catch (error) {
     console.error("An error occurred: ", error);
   }
