@@ -7,8 +7,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: white;
 }
-
-.main-section {
+body .main-section {
   height: 70vh;
   width: 60vw;
   display: flex;
@@ -19,8 +18,7 @@ body {
   justify-content: space-between;
   border: 1px solid rgb(16, 194, 105);
 }
-
-.points {
+body .main-section .points {
   display: flex;
   width: 100%;
   height: 20px;
@@ -29,8 +27,7 @@ body {
   border: 1px solid black;
   gap: 1px solid black;
 }
-
-.point {
+body .main-section .points .point {
   display: flex;
   justify-content: center;
   width: 10%;
@@ -39,25 +36,21 @@ body {
   border: none;
   border-right: 1px solid black;
 }
-
-.point:last-child {
+body .main-section .points .point:last-child {
   border-right: none;
 }
-
-.question {
+body .main-section .question {
   display: flex;
   justify-content: center;
   color: black;
   font-size: larger;
   font-weight: 800;
 }
-
-.anwsers {
+body .main-section .anwsers {
   display: flex;
   flex-wrap: wrap;
 }
-
-.anwser {
+body .main-section .anwsers .anwser {
   box-sizing: border-box;
   width: 48%;
   height: 10vh;
@@ -70,17 +63,14 @@ body {
   font-weight: 600;
   transition: 0.5s;
 }
-
-.anwser:hover {
-  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+body .main-section .anwsers .anwser:hover {
+  box-shadow: 8px 8px 24px 0px rgb(66, 68, 90);
 }
-
-.anwser[data-picked="true"] {
+body .main-section .anwsers .anwser[data-picked=true] {
   color: rgb(16, 194, 105);
   background-color: white;
 }
-
-.next {
+body .main-section .next {
   height: 10vh;
   background-color: white;
   border: solid rgb(16, 194, 105) 2px;
@@ -89,14 +79,12 @@ body {
   font-size: larger;
   font-weight: 900;
 }
-
-.next:hover {
+body .main-section .next:hover {
   color: white;
   background-color: rgb(16, 194, 105);
-  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 24px 0px rgb(66, 68, 90);
 }
-
-.overlay {
+body .overlay {
   position: fixed;
   top: 0;
   right: 0;
@@ -105,8 +93,7 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
 }
-
-.info-window {
+body .overlay .info-window {
   box-sizing: border-box;
   position: relative;
   top: 50%;
@@ -125,8 +112,7 @@ body {
   flex-wrap: wrap;
   padding: 40px;
 }
-
-.overlay-button {
+body .overlay .info-window .overlay-button {
   border: none;
   border-radius: 15px;
   background-color: rgb(16, 194, 105);
@@ -134,7 +120,6 @@ body {
   width: 70px;
   color: white;
 }
-
-.overlay-button:hover {
-  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
-}
+body .overlay .info-window .overlay-button:hover {
+  box-shadow: 8px 8px 24px 0px rgb(66, 68, 90);
+}/*# sourceMappingURL=questions.css.map */

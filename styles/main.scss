@@ -1,0 +1,137 @@
+body {
+  margin: 0px;
+  margin-top: 10vh;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+
+  .navbar {
+    position: fixed;
+    border-bottom: 1px solid rgb(16, 194, 105);
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 60px -20px black;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    background-color: white;
+    z-index: 100;
+
+    .my-quizzes-button,
+    .add-quiz-button,
+    .logout-button {
+      width: 10vw;
+      height: 5vh;
+      color: rgb(16, 194, 105);
+      background-color: white;
+      border-radius: 25px;
+      border: 1px solid rgb(16, 194, 105);
+      margin: 5px;
+
+      @media (max-width: 850px) {
+        width: 15vw;
+      }
+
+      @media (max-width: 550px) {
+        width: 20vw;
+      }
+
+      @media (max-width: 450px) {
+        width: 23vw;
+        margin: 1px;
+      }
+    }
+
+    .my-quizzes-button {
+      color: white;
+      background-color: rgb(16, 194, 105);
+    }
+
+    .logout-button {
+      color: white;
+      background-color: rgb(230, 23, 20);
+      border: none;
+    }
+
+    .main-img {
+      max-height: 90%;
+    }
+  }
+
+  .main-section {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 1vh;
+
+    .quiz-container {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      height: 25vh;
+      width: calc(25% - 2vh);
+      padding: 2vh;
+      margin: 1vh;
+      border-radius: 5px;
+      align-items: baseline;
+      overflow: hidden;
+
+      @media (max-width: 700px) {
+        width: calc(33% - 2vh);
+      }
+
+      @media (max-width: 550px) {
+        width: calc(50% - 2vh);
+      }
+
+      @media (max-width: 450px) {
+        width: calc(100% - 2vh);
+      }
+
+      &:hover {
+        box-shadow: 8px 8px 20px 0px rgb(75, 77, 95);
+      }
+
+      .icon {
+        object-fit: contain;
+        height: 35%;
+        margin: 0px;
+        padding: 0px;
+        margin-bottom: 5%;
+      }
+
+      .quiz-title {
+        font-size: large;
+        font-weight: bold;
+        height: 20%;
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .quiz-description {
+        font-size: medium;
+        height: 45%;
+        margin: 0px;
+        padding: 0px;
+        margin-bottom: 5px;
+      }
+
+      .start-quiz {
+        border: none;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+$green: rgb(16, 194, 105);
+$dark-green: rgb(11, 152, 82);
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  position: absolute;
+
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid $green;
+    height: 45vh;
+    width: 25vw;
+    border-radius: 15px;
+    padding: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: space-between;
+
+    .username-container,
+    .password-container,
+    .confirm-password-container,
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      #username,
+      #password,
+      #confirm-password {
+        height: 30px;
+        border: 1px solid $green;
+        border-radius: 15px;
+        padding-left: 10px;
+      }
+
+      .login-button,
+      .sign-in-button {
+        height: 40px;
+        color: white;
+        background-color: $green;
+        border-radius: 25px;
+        border: none;
+        margin: 5px;
+        &:hover {
+          background-color: $dark-green;
+        }
+      }
+    }
+
+    @media (max-width: 900px) {
+      width: 50%;
+    }
+
+    @media (max-width: 500px) {
+      width: 70%;
+    }
+  }
+}

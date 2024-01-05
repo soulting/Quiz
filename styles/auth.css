@@ -1,19 +1,18 @@
 body {
   height: 100%;
   width: 100%;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   display: flex;
   font-family: Arial, Helvetica, sans-serif;
   background-color: white;
   position: absolute;
 }
-
-.login-container {
+body .login-container {
   display: flex;
   flex-direction: column;
   position: relative;
-  border: solid 1px rgb(16, 194, 105);
+  border: 1px solid rgb(16, 194, 105);
   height: 45vh;
   width: 25vw;
   border-radius: 15px;
@@ -23,18 +22,39 @@ body {
   transform: translate(-50%, -50%);
   justify-content: space-between;
 }
-
-#username,
-#password,
-#confirm-password {
+body .login-container .username-container,
+body .login-container .password-container,
+body .login-container .confirm-password-container,
+body .login-container .button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+body .login-container .username-container #username,
+body .login-container .username-container #password,
+body .login-container .username-container #confirm-password,
+body .login-container .password-container #username,
+body .login-container .password-container #password,
+body .login-container .password-container #confirm-password,
+body .login-container .confirm-password-container #username,
+body .login-container .confirm-password-container #password,
+body .login-container .confirm-password-container #confirm-password,
+body .login-container .button-container #username,
+body .login-container .button-container #password,
+body .login-container .button-container #confirm-password {
   height: 30px;
-  border: solid 1px rgb(16, 194, 105);
+  border: 1px solid rgb(16, 194, 105);
   border-radius: 15px;
   padding-left: 10px;
 }
-
-.login-button,
-.sign-in-button {
+body .login-container .username-container .login-button,
+body .login-container .username-container .sign-in-button,
+body .login-container .password-container .login-button,
+body .login-container .password-container .sign-in-button,
+body .login-container .confirm-password-container .login-button,
+body .login-container .confirm-password-container .sign-in-button,
+body .login-container .button-container .login-button,
+body .login-container .button-container .sign-in-button {
   height: 40px;
   color: white;
   background-color: rgb(16, 194, 105);
@@ -42,24 +62,23 @@ body {
   border: none;
   margin: 5px;
 }
-
-.username-container,
-.password-container,
-.button-container,
-.confirm-password-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+body .login-container .username-container .login-button:hover,
+body .login-container .username-container .sign-in-button:hover,
+body .login-container .password-container .login-button:hover,
+body .login-container .password-container .sign-in-button:hover,
+body .login-container .confirm-password-container .login-button:hover,
+body .login-container .confirm-password-container .sign-in-button:hover,
+body .login-container .button-container .login-button:hover,
+body .login-container .button-container .sign-in-button:hover {
+  background-color: rgb(11, 152, 82);
 }
-
 @media (max-width: 900px) {
-  .login-container {
+  body .login-container {
     width: 50%;
   }
 }
-
 @media (max-width: 500px) {
-  .login-container {
+  body .login-container {
     width: 70%;
   }
-}
+}/*# sourceMappingURL=auth.css.map */
