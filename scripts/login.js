@@ -3,8 +3,12 @@ import { fetchData } from "./api.js";
 async function createUser(data) {
   try {
     const responseData = await fetchData("login", "POST", data);
-    localStorage.setItem("user", JSON.stringify(responseData));
-    window.open(".\\main.html", "_self");
+    if (responseData.status === "correct") {
+      localStorage.setItem("user", JSON.stringify(responseData));
+      window.open(".\\main.html", "_self");
+    } else {
+      alert("podałeś zły username lub hasło");
+    }
   } catch (error) {
     console.error("An error occurred: ", error);
   }
@@ -18,12 +22,16 @@ username.focus();
 
 loginButton.addEventListener("click", (event) => {
   event.preventDefault();
-  const data = {
-    username: username.value,
-    password: password.value,
-  };
+  if (username.value === "" || password.value === "") {
+    alert('pola "username" i "password" nie mogą pozostać puste');
+  } else {
+    const data = {
+      username: username.value,
+      password: password.value,
+    };
 
-  createUser(data);
+    createUser(data);
+  }
 });
 
 signInButton.addEventListener("click", () => {
