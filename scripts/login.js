@@ -6,9 +6,9 @@ async function createUser(data) {
     if (responseData.status === "correct") {
       localStorage.setItem("user", JSON.stringify(responseData));
       window.open(".\\main.html", "_self");
-    } else {
-      alert("podałeś zły username lub hasło");
+      return;
     }
+    alert("podałeś zły username lub hasło");
   } catch (error) {
     console.error("An error occurred: ", error);
   }
@@ -24,14 +24,14 @@ loginButton.addEventListener("click", (event) => {
   event.preventDefault();
   if (username.value === "" || password.value === "") {
     alert('pola "username" i "password" nie mogą pozostać puste');
-  } else {
-    const data = {
-      username: username.value,
-      password: password.value,
-    };
-
-    createUser(data);
+    return;
   }
+  const data = {
+    username: username.value,
+    password: password.value,
+  };
+
+  createUser(data);
 });
 
 signInButton.addEventListener("click", () => {
@@ -43,9 +43,9 @@ username.addEventListener("keydown", (event) => {
     event.preventDefault();
     if (username.value === "") {
       alert("wprowadź nazwę użytkownika");
-    } else {
-      password.focus();
+      return;
     }
+    password.focus();
   }
 });
 
@@ -54,8 +54,8 @@ password.addEventListener("keydown", (event) => {
     event.preventDefault();
     if (password.value === "") {
       alert("wprowadź hasło");
-    } else {
-      loginButton.click();
+      return;
     }
+    loginButton.click();
   }
 });

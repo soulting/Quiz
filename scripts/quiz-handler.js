@@ -1,14 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
   function loadQuestion(question, answers, answerExplanation, newQuestion) {
     question.textContent = newQuestion.question;
-    answers[0].textContent = newQuestion.option_A;
-    answers[1].textContent = newQuestion.option_B;
-    answers[2].textContent = newQuestion.option_C;
-    answers[3].textContent = newQuestion.option_D;
+    answers.forEach((element) => {
+      newQuestion.choices.forEach((item) => {
+        if (element.id === item.lable) {
+          element.textContent = item.text;
+        }
+      });
+    });
     answerExplanation.textContent = newQuestion.explanation;
   }
 
   const questions = JSON.parse(localStorage.getItem("questions"));
+  console.log(questions);
 
   const questionElement = document.querySelector(".question");
   const answerButtons = document.querySelectorAll(".anwser");

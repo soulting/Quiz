@@ -90,6 +90,16 @@ body .main-section .quiz-container {
   align-items: baseline;
   overflow: hidden;
 }
+@media (max-width: 1050px) {
+  body .main-section .quiz-container {
+    height: 28vh;
+  }
+}
+@media (max-width: 1050px) {
+  body .main-section .quiz-container {
+    height: 30vh;
+  }
+}
 @media (max-width: 700px) {
   body .main-section .quiz-container {
     width: calc(33% - 2vh);
