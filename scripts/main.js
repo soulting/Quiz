@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(target.parentElement.id);
       startQuiz(target.parentElement.id);
     } else if (target.classList.contains("add-new-quiz")) {
-      const keyInput = document.querySelector(".key-input").value;
+      const keyInput = target.parentElement.querySelector(".key-input").value;
       if (keyInput === "") {
         alert("Wpisz klucz!!!");
       } else {
