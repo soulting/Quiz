@@ -1,3 +1,5 @@
+import { fetchData } from "./api.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   function updateLocalStorageUser(updatedUser) {
     localStorage.setItem("user", JSON.stringify(updatedUser));
@@ -6,19 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
   async function searchQuizzes(userQuizes) {
     const quote = document.querySelector(".search-input").value;
 
-    data = {
+    const data = {
       frase: quote,
     };
     try {
-      const response = await fetch("http://127.0.0.1:5000/searchQuizzes", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (response.ok) {
-        const responseData = await response.json();
-        renderSearchHeaders(responseData.quizzes, userQuizes);
-      }
+      const responseData = await fetchData("searchQuizzes", "POST", data);
+      renderSearchHeaders(responseData.quizzes, userQuizes);
     } catch (error) {
       console.error("An error occurred searching the quizzes", error);
     }
@@ -65,15 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
       quiz_ids: idList,
     };
     try {
-      const response = await fetch("http://127.0.0.1:5000/loadQuizHeaders", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (response.ok) {
-        const responseData = await response.json();
-        renderQuizHeaders(responseData.quiz_headers);
-      }
+      const responseData = await fetchData("loadQuizHeaders", "POST", data);
+      renderQuizHeaders(responseData.quiz_headers);
     } catch (error) {
       console.error("An error occurred downloading the quizzes", error);
     }
@@ -95,23 +83,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   async function startQuiz(quizId) {
-    data = {
+    const data = {
       id: quizId,
     };
     try {
-      const response = await fetch("http://127.0.0.1:5000/getQuestions", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (response.ok) {
-        const responseData = await response.json();
-        localStorage.setItem(
-          "questions",
-          JSON.stringify(responseData.questions)
-        );
-        window.open(".\\quiz.html", "_self");
-      }
+      const responseData = await fetchData("getQuestions", "POST", data);
+      localStorage.setItem("questions", JSON.stringify(responseData.questions));
+      window.open(".\\quiz.html", "_self");
     } catch (error) {}
   }
 
@@ -122,45 +100,30 @@ document.addEventListener("DOMContentLoaded", () => {
       keyInput: keyInput,
     };
     try {
-      const response = await fetch("http://127.0.0.1:5000/addQuiz", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (response.ok) {
-        const responseData = await response.json();
-
-        if (responseData.accepted) {
-          user.quiz_ids = responseData.new_quiz_list;
-          updateLocalStorageUser(user);
-          searchQuizzes(user.quiz_ids);
-        } else {
-          alert("Podałeś zły klucz");
-        }
+      const responseData = await fetchData("addQuiz", "POST", data);
+      if (responseData.accepted) {
+        user.quiz_ids = responseData.new_quiz_list;
+        updateLocalStorageUser(user);
+        searchQuizzes(user.quiz_ids);
+        return;
       }
+      alert("Podałeś zły klucz");
     } catch (error) {
       console.error("An error occurred", error);
     }
   }
 
   async function deleteQuiz(user, quizId) {
-    data = {
+    const data = {
       userId: user.id,
       quizId: quizId,
     };
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/deleteQuiz", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (response.ok) {
-        const responseData = await response.json();
-        user.quiz_ids = responseData.new_quiz_list;
-        updateLocalStorageUser(user);
-        searchQuizzes(user.quiz_ids);
-      }
+      const responseData = await fetchData("deleteQuiz", "POST", data);
+      user.quiz_ids = responseData.new_quiz_list;
+      updateLocalStorageUser(user);
+      searchQuizzes(user.quiz_ids);
     } catch (error) {}
   }
 
